@@ -1,1 +1,202 @@
+/* Import Open Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
 /* Add your CSS here */
+
+/* Center the header content */
+header {
+  /* This centers the content horizontally */
+  text-align: center;
+
+  /* Add a blue gradient background:
+     - Starts with a light blue on the left (#b3d8fd)
+     - Ends with a darker blue on the right (#1565c0)
+  */
+  background: linear-gradient(to right, #b3d8fd, #1565c0);
+
+  /* Make the header cover half the page height */
+  height: 50vh;
+
+  /* Remove default margin and border so the color fills the top */
+  margin: 0;
+  border: none;
+
+  /* Make sure the header stretches the full width */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* Use flexbox to center content vertically and horizontally */
+  display: flex; /* enables flexbox */
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically */
+}
+
+/* Make sure the inner div does not stretch full width */
+header > div {
+  /* Optional: limit the width for better appearance */
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Remove margin from the body to prevent white borders around the header */
+body {
+  margin: 0;
+  /* ...existing code if any... */
+}
+
+/* Make the Intel logo smaller in the header */
+header img {
+  /* Increase the logo size */
+  width: 160px; /* was 120px */
+  height: auto;
+}
+
+/* Style the main heading (h1) in the header */
+header h1 {
+  /* Make the text white */
+  color: white;
+  /* Make the font much bigger */
+  font-size: 3.2em; /* was 2.5em */
+  /* Add some space above and below */
+  margin: 30px 0;   /* add more space */
+}
+
+/* Make each part of the h1 appear on its own line */
+header h1 span {
+  /* Display each span as a block element */
+  display: block;
+}
+
+/* Decorative light blue line under the heading */
+.header-line {
+  /* Light blue color */
+  border: none;
+  height: 6px; /* make the line thicker */
+  background-color: #b3d8fd;
+  /* Set the width to about 300px to stretch under the "g" in "Through" and "h" in "the" */
+  width: 300px; /* make the line longer */
+  /* Center the line */
+  margin: 0 auto 28px auto; /* more space below */
+  /* Add a little rounded edge */
+  border-radius: 3px;
+}
+
+/* Style the header description text */
+.header-desc {
+  /* Make the text white */
+  color: white;
+  /* Make the font bigger */
+  font-size: 1.5em; /* was 1.2em */
+  /* Add some space below */
+  margin-bottom: 28px;
+}
+
+/* Make each span in the header description appear on its own line */
+.header-desc span {
+  display: block;
+  /* Add a little space between lines */
+  margin-bottom: 5px;
+}
+
+/* Timeline cards container */
+.timeline-cards {
+  /* Use Flexbox to lay out cards in a row */
+  display: flex;
+  flex-direction: row;      /* Cards go left to right */
+  justify-content: flex-start; /* Start from the left */
+  align-items: stretch;     /* Cards stretch to same height */
+  overflow-x: auto;         /* Enable horizontal scrolling */
+  gap: 20px;                /* Space between cards */
+  padding: 20px 0;
+  scrollbar-width: thin;    /* Thinner scrollbar for Firefox */
+}
+
+/* Each card style */
+.timeline-cards > div {
+  /* Flexbox makes each card stay the same size */
+  flex: 0 0 auto;           /* Do not grow or shrink, keep width */
+  min-width: 250px;
+  max-width: 280px;
+  background: #f5faff;
+  border: 1px solid #b3d8fd;
+  border-radius: 10px;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;   /* Stack content vertically inside card */
+  align-items: center;      /* Center content horizontally in card */
+  transition: background 0.3s;
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden;   /* Hide anything outside the card */
+}
+
+/* When hovering over a card, change background to dark blue with opacity */
+.timeline-cards > div:hover {
+  /* Use a dark blue with some transparency */
+  background: rgba(21, 101, 192, 0.92); /* #1565c0 with opacity */
+  border-color: #1565c0;
+}
+
+/* Make images in cards fit nicely */
+.timeline-cards img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Make the details paragraph an overlay */
+.timeline-cards > div p {
+  /* Always use flex for overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 101, 192, 0.92); /* dark blue with opacity */
+  color: #fff;
+  opacity: 0; /* Start invisible */
+  pointer-events: none; /* Don't block mouse until hover */
+  padding: 24px 16px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+  text-align: center;
+  display: flex; /* Always flex for centering */
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1em; /* Reduced from 1.25em for better fit */
+  line-height: 1.5;
+  z-index: 2;
+  margin-top: 0; /* Remove margin that could offset overlay */
+}
+
+/* Show the overlay on hover */
+.timeline-cards > div:hover p {
+  opacity: 1; /* Fade in */
+  pointer-events: auto; /* Allow interaction if needed */
+}
+
+/* Style the year (h2) in each timeline card */
+.timeline-cards h2 {
+  color: #0d2c5a;           /* Even darker blue */
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .timeline-cards {
+    flex-direction: column; /* Stack cards vertically */
+    overflow-x: visible;    /* No horizontal scroll needed */
+    gap: 16px;
+    align-items: center;    /* Center cards */
+  }
+  .timeline-cards > div {
+    max-width: 95vw;
+    min-width: 0;
+    width: 100%;
+  }
+}
