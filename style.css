@@ -186,17 +186,194 @@ header h1 span {
   margin-bottom: 8px;
 }
 
-/* Responsive: Stack cards vertically on small screens */
-@media (max-width: 700px) {
-  .timeline-cards {
-    flex-direction: column; /* Stack cards vertically */
-    overflow-x: visible;    /* No horizontal scroll needed */
-    gap: 16px;
-    align-items: center;    /* Center cards */
-  }
-  .timeline-cards > div {
-    max-width: 95vw;
+/* Simple Responsive Columns Section */
+.simple-columns {
+  /* Add some space above and below the section */
+  padding: 40px 0;
+  background: #f5faff; /* Light background for contrast */
+}
+
+/* Container centers the content and limits width */
+.simple-columns .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Row uses flexbox to arrange columns side by side */
+.simple-columns .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between columns */
+}
+
+/* Each column styles */
+.simple-columns .col {
+  background: white;
+  border: 1px solid #b3d8fd;
+  border-radius: 10px;
+  padding: 24px 16px;
+  flex: 1; /* All columns take equal space */
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Add some space below the icon heading */
+.simple-columns .col h2 {
+  font-size: 1.6em;
+  margin-bottom: 12px;
+}
+
+/* Style the 'Learn More' button */
+.learn-btn {
+  background: #1565c0; /* Intel blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 22px;
+  font-size: 1em;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.learn-btn:hover {
+  background: #0d2c5a; /* Darker blue on hover */
+}
+
+/* Subscription Form Section */
+.subscribe-section {
+  background: #f5faff; /* Match the columns section background */
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Style the form itself */
+.subscribe-form {
+  display: inline-block; /* Center the form horizontally */
+  background: white;
+  border: 1px solid #b3d8fd;
+  border-radius: 10px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  min-width: 250px;
+  max-width: 320px;
+}
+
+.subscribe-form label {
+  display: block;
+  font-size: 1.2em;
+  color: #1565c0;
+  margin-bottom: 12px;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 10px 12px;
+  border: 1px solid #b3d8fd;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 90%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscribe-form button {
+  background: #1565c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 22px;
+  font-size: 1em;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.subscribe-form button:hover {
+  background: #0d2c5a;
+}
+
+@media (max-width: 500px) {
+  .subscribe-form {
     min-width: 0;
+    width: 95vw;
+    padding: 16px 4vw;
+  }
+  .subscribe-form input[type="email"] {
     width: 100%;
+  }
+  .subscribe-form button {
+    width: 100%;
+  }
+}
+
+/* Simple Footer */
+.site-footer {
+  background: #1565c0;
+  color: white;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1em;
+  margin-top: 0;
+}
+
+/* Language Switcher Styles */
+.lang-switcher {
+  width: 100%;
+  background: #e3f2fd;
+  text-align: right;
+  padding: 10px 0 10px 0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+.lang-switcher label {
+  color: #1565c0;
+  margin-right: 8px;
+  font-weight: bold;
+}
+.lang-switcher select {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #b3d8fd;
+  font-size: 1em;
+}
+
+/* Make sure RTL works for all main sections */
+html[dir="rtl"] body,
+html[dir="rtl"] .simple-columns .col,
+html[dir="rtl"] .subscribe-form,
+html[dir="rtl"] .timeline-cards > div {
+  text-align: right;
+}
+
+html[dir="rtl"] .simple-columns .row {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .timeline-cards {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .subscribe-form label,
+html[dir="rtl"] .subscribe-form input,
+html[dir="rtl"] .subscribe-form button {
+  direction: rtl;
+}
+
+html[dir="rtl"] .subscribe-form input[type="email"] {
+  text-align: right;
+}
+
+/* Responsive: Stack columns vertically on small screens */
+@media (max-width: 800px) {
+  .simple-columns .row {
+    flex-direction: column;
+    gap: 16px;
   }
 }

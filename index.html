@@ -8,6 +8,16 @@
 </head>
 <body>
 
+  <!-- Language Switcher Section -->
+  <div class="lang-switcher">
+    <!-- Simple dropdown for language selection -->
+    <label for="language-select">Language:</label>
+    <select id="language-select">
+      <option value="en" selected>English</option>
+      <option value="ar">العربية (Arabic)</option>
+    </select>
+  </div>
+
   <!-- Header / Hero Section -->
   <header>
     <div>
@@ -138,5 +148,247 @@
     </div>
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Simple Responsive Columns Section -->
+  <section class="simple-columns">
+    <!-- Container centers the content -->
+    <div class="container">
+      <!-- Row holds the columns side by side -->
+      <div class="row">
+        <!-- First column -->
+        <div class="col">
+          <!-- Icon in heading (emoji for beginners) -->
+          <h2>🌱 Sustainability</h2>
+          <p>Learn about Intel's green initiatives and eco-friendly practices.</p>
+          <!-- Consistent styled button -->
+          <button class="learn-btn">Learn More</button>
+        </div>
+        <!-- Second column -->
+        <div class="col">
+          <h2>💡 Innovation</h2>
+          <p>Discover how Intel drives innovation in technology and design.</p>
+          <button class="learn-btn">Learn More</button>
+        </div>
+        <!-- Third column -->
+        <div class="col">
+          <h2>🌍 Impact</h2>
+          <p>See Intel's positive impact on communities and the environment.</p>
+          <button class="learn-btn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Simple Responsive Columns Section -->
+
+  <!-- Subscription Form Section -->
+  <section class="subscribe-section">
+    <!-- Form container centers the form -->
+    <form class="subscribe-form">
+      <label for="email">Subscribe for Updates:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Simple Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Intel Sustainability Project. All rights reserved.</p>
+  </footer>
+
+  <script>
+  // Add translations for all visible text, including headings, timeline cards, and instructions
+  const translations = {
+    en: {
+      sustainability: "Sustainability",
+      innovation: "Innovation",
+      impact: "Impact",
+      learnMore: "Learn More",
+      subscribeLabel: "Subscribe for Updates:",
+      subscribePlaceholder: "Enter your email",
+      subscribeBtn: "Subscribe",
+      footer: "© 2025 Intel Sustainability Project. All rights reserved.",
+      mainHeading1: "Sustainability",
+      mainHeading2: "Through the Ages",
+      headerDesc1: "Explore Intel's journey through time, discovering how our",
+      headerDesc2: "commitment to innovation has shaped a more sustainable",
+      headerDesc3: "future for technology and our planet.",
+      timelineInstruction: "Scroll to view timeline | Hover over cards to learn more!",
+      timeline: [
+        {
+          year: "1968",
+          title: "Intel Founded",
+          desc: "Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation."
+        },
+        {
+          year: "1971",
+          title: "First Microprocessor",
+          desc: "Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices."
+        },
+        {
+          year: "1978",
+          title: "8086 Processor",
+          desc: "Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era."
+        },
+        {
+          year: "1985",
+          title: "386 Processor",
+          desc: "Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers."
+        },
+        {
+          year: "2006",
+          title: "Peak GHG Emissions",
+          desc: "This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend."
+        },
+        {
+          year: "2020",
+          title: "RISE Strategy",
+          desc: "Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction."
+        },
+        {
+          year: "2022",
+          title: "Net-Zero By 2040",
+          desc: "Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives."
+        },
+        {
+          year: "2023",
+          title: "Renewable Electricity",
+          desc: "The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals."
+        },
+        {
+          year: "2024",
+          title: "Sustainability Summit",
+          desc: "Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing."
+        }
+      ]
+    },
+    ar: {
+      sustainability: "الاستدامة",
+      innovation: "الابتكار",
+      impact: "الأثر",
+      learnMore: "اعرف المزيد",
+      subscribeLabel: "اشترك للحصول على التحديثات:",
+      subscribePlaceholder: "أدخل بريدك الإلكتروني",
+      subscribeBtn: "اشترك",
+      footer: "© 2025 مشروع استدامة إنتل. جميع الحقوق محفوظة.",
+      mainHeading1: "الاستدامة",
+      mainHeading2: "عبر العصور",
+      headerDesc1: "استكشف رحلة إنتل عبر الزمن واكتشف كيف شكل التزامنا",
+      headerDesc2: "بالابتكار مستقبلاً أكثر استدامة للتكنولوجيا وكوكبنا.",
+      headerDesc3: "",
+      timelineInstruction: "مرر لعرض الجدول الزمني | مرر فوق البطاقات لمعرفة المزيد!",
+      timeline: [
+        {
+          year: "١٩٦٨",
+          title: "تأسيس إنتل",
+          desc: "روبرت نويس وجوردون مور يغيران اسم الشركة الجديدة من NM Electronics إلى Intel Corporation، مما يمهد الطريق لعقود من الابتكار التكنولوجي."
+        },
+        {
+          year: "١٩٧١",
+          title: "أول معالج دقيق",
+          desc: "تطلق إنتل 4004، أول معالج دقيق تجاري في العالم، مما يشعل ثورة المعالجات الدقيقة ويدفع مستقبل أجهزة الحوسبة."
+        },
+        {
+          year: "١٩٧٨",
+          title: "معالج 8086",
+          desc: "إطلاق معالج 8086، الذي أسس بنية x86 التي تشغل العديد من أجهزة الكمبيوتر والخوادم في العصر الحديث."
+        },
+        {
+          year: "١٩٨٥",
+          title: "معالج 386",
+          desc: "تقدم إنتل معالج 386 بهندسة 32 بت، مما يدشن عصرًا جديدًا من الأداء وتعدد المهام لأجهزة الكمبيوتر الشخصية."
+        },
+        {
+          year: "٢٠٠٦",
+          title: "ذروة انبعاثات الغازات الدفيئة",
+          desc: "يمثل هذا العام أعلى انبعاثات سنوية لغازات الدفيئة لعمليات إنتل. في السنوات التالية، تستثمر إنتل بكثافة في معالجة المواد الكيميائية والطاقة المتجددة والتصنيع الموفّر للطاقة لعكس هذا الاتجاه."
+        },
+        {
+          year: "٢٠٢٠",
+          title: "استراتيجية RISE",
+          desc: "تطلق إنتل استراتيجية RISE (مسؤول، شامل، مستدام، ممكّن) وأهداف 2030، بهدف دفع التقدم الصناعي في العمل المناخي وإدارة المياه وتقليل النفايات."
+        },
+        {
+          year: "٢٠٢٢",
+          title: "صفر انبعاثات بحلول 2040",
+          desc: "تعلن إنتل التزامها بتحقيق صافي انبعاثات غازات دفيئة صفرية (النطاق 1 و2) في عملياتها العالمية بحلول عام 2040، استنادًا إلى سنوات من المبادرات البيئية."
+        },
+        {
+          year: "٢٠٢٣",
+          title: "الكهرباء المتجددة",
+          desc: "تصل الشركة إلى استخدام 99% من الكهرباء المتجددة عالميًا، مما يساعد على خفض الانبعاثات الكربونية بشكل كبير ودفع التقدم نحو أهداف الاستدامة طويلة الأجل لإنتل."
+        },
+        {
+          year: "٢٠٢٤",
+          title: "قمة الاستدامة",
+          desc: "تستضيف إنتل أول قمة استدامة لها، وتجمع الموردين والمسؤولين الحكوميين وقادة الصناعة للتعاون في تصنيع أشباه الموصلات المستدامة للجيل القادم."
+        }
+      ]
+    }
+  };
+
+  function setLanguage(lang) {
+    // Set direction for RTL languages
+    if (lang === 'ar') {
+      document.documentElement.dir = 'rtl';
+      document.body.style.textAlign = 'right';
+    } else {
+      document.documentElement.dir = 'ltr';
+      document.body.style.textAlign = '';
+    }
+    // Update main heading
+    document.querySelector('header h1 span:nth-child(1)').textContent = translations[lang].mainHeading1;
+    document.querySelector('header h1 span:nth-child(2)').textContent = translations[lang].mainHeading2;
+    // Update header description
+    const descSpans = document.querySelectorAll('.header-desc span');
+    descSpans[0].textContent = translations[lang].headerDesc1;
+    descSpans[1].textContent = translations[lang].headerDesc2;
+    descSpans[2].textContent = translations[lang].headerDesc3;
+    // Update timeline cards
+    const timelineCards = document.querySelectorAll('.timeline-cards > div');
+    translations[lang].timeline.forEach(function(card, i) {
+      if (timelineCards[i]) {
+        timelineCards[i].querySelector('h2').textContent = card.year;
+        timelineCards[i].querySelector('h3').textContent = card.title;
+        timelineCards[i].querySelector('p').textContent = card.desc;
+      }
+    });
+    // Update timeline instruction
+    document.querySelector('body > p').textContent = translations[lang].timelineInstruction;
+    // Update column headings
+    document.querySelectorAll('.col h2')[0].textContent = '🌱 ' + translations[lang].sustainability;
+    document.querySelectorAll('.col h2')[1].textContent = '💡 ' + translations[lang].innovation;
+    document.querySelectorAll('.col h2')[2].textContent = '🌍 ' + translations[lang].impact;
+    // Update column descriptions
+    const colDescs = [
+      {
+        en: "Learn about Intel's green initiatives and eco-friendly practices.",
+        ar: "تعرف على مبادرات إنتل الخضراء وممارساتها الصديقة للبيئة."
+      },
+      {
+        en: "Discover how Intel drives innovation in technology and design.",
+        ar: "اكتشف كيف تدفع إنتل الابتكار في التكنولوجيا والتصميم."
+      },
+      {
+        en: "See Intel's positive impact on communities and the environment.",
+        ar: "شاهد الأثر الإيجابي لإنتل على المجتمعات والبيئة."
+      }
+    ];
+    document.querySelectorAll('.col p').forEach(function(p, i) {
+      p.textContent = colDescs[i][lang];
+    });
+    // Update Learn More buttons
+    document.querySelectorAll('.learn-btn').forEach(btn => btn.textContent = translations[lang].learnMore);
+    // Update subscription form
+    document.querySelector('.subscribe-form label').textContent = translations[lang].subscribeLabel;
+    document.querySelector('.subscribe-form input[type="email"]').placeholder = translations[lang].subscribePlaceholder;
+    document.querySelector('.subscribe-form button').textContent = translations[lang].subscribeBtn;
+    // Update footer
+    document.querySelector('.site-footer p').textContent = translations[lang].footer;
+  }
+
+  document.getElementById('language-select').addEventListener('change', function() {
+    setLanguage(this.value);
+  });
+  </script>
 </body>
 </html>
